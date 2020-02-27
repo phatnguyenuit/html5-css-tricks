@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Template Example</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 334px repeat(3, 1fr);
+      grid-template-rows: 56px auto 108px;
+      grid-template-areas:
+        "header header header header"
+        "sidebar main main main"
+        "footer footer footer footer";
+      min-height: 100vh;
+    }
+
+    .container>div {
+      border: 1px solid red;
+    }
+
+    .header {
+      grid-area: header;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      overflow-y: auto;
+    }
+
+    .main {
+      grid-area: main;
+      overflow-y: auto;
+    }
+
+    .footer {
+      grid-area: footer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">Header</div>
+    <div class="sidebar">sidebar</div>
+    <div class="main">Main</div>
+    <div class="footer">Footer</div>
+  </div>
+</body>
+
+</html>
